@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MomsAssistant"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".AssistantActivity"/>
+        <activity android:name=".ChildrenProfileActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".MomsProfileActivity"/>
+        <activity android:name=".RegistrationActivity"/>
+        <activity android:name=".SleepActivity"/>
+        <activity android:name=".SleepStatistics"/>
+
     </application>
 
 </manifest>
