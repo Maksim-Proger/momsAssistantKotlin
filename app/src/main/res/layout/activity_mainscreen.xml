@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background_app_color">
 
     <LinearLayout
         android:id="@+id/linearLayoutHeader"
@@ -15,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/first_app_color">
+        android:background="@color/dark_app_color">
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,43 +33,80 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollViewContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutHeader"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutButtons">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutButtons" >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/content_app_color"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/content_app_color"
+                android:layout_marginBottom="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/content_app_color"
+                android:layout_marginBottom="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/content_app_color"
+                android:layout_marginBottom="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/content_app_color"
+                android:layout_marginBottom="15dp"/>
+
+        </LinearLayout>
 
     </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayoutButtons"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="10dp"
-        android:padding="7dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/sleep_icon" />
+            android:src="@drawable/sleep_icon"
+            android:background="@color/dark_app_color"/>
+
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/diary_icon"/>
+            android:src="@drawable/diary_icon"
+            android:background="@color/dark_app_color"/>
+
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/assistant_icon"/>
+            android:src="@drawable/assistant_icon"
+            android:background="@color/dark_app_color"/>
 
     </LinearLayout>
 
