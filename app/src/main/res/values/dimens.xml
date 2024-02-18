@@ -2,5 +2,4 @@
 <resources>
     <dimen name="initial_panel_width">250dp</dimen>
     <dimen name="max_panel_width">350dp</dimen>
-    <dimen name="padding">10dp</dimen>
 </resources>
