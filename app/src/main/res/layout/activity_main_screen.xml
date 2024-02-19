@@ -32,51 +32,15 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/scrollViewContent"
+    <fragment
+        android:id="@+id/fr_place"
+        android:name="project.moms.assistant.FragmentMainScreen"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutHeader"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutButtons" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/content_app_color"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/content_app_color"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/content_app_color"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/content_app_color"
-                android:layout_marginBottom="15dp"/>
-
-        </LinearLayout>
-
-    </ScrollView>
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutButtons"/>
 
     <LinearLayout
         android:id="@+id/linearLayoutButtons"
@@ -91,7 +55,17 @@
         android:background="@drawable/rounded_corners">
 
         <ImageButton
+            android:id="@+id/home_button"
+            android:onClick="changeFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/home_icon"
+            android:background="@color/dark_app_color"/>
+
+        <ImageButton
             android:id="@+id/sleep_button"
+            android:onClick="changeFragment"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -108,6 +82,7 @@
 
         <ImageButton
             android:id="@+id/assistant_button"
+            android:onClick="changeFragment"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
