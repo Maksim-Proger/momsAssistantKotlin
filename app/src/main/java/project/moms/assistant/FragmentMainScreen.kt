@@ -1,7 +1,6 @@
 package project.moms.assistant
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,8 +16,8 @@ class FragmentMainScreen : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       binding = FragmentMainScreenBinding.inflate(inflater, container, false)
-       return binding.root
+        binding = FragmentMainScreenBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,7 +30,6 @@ class FragmentMainScreen : Fragment() {
 
             // Вызов интерфейса для передачи значения прокрутки в активность
             scrollChangeListener?.onScrollChanged(percentageScrolled)
-            Log.d("Прокрутка", percentageScrolled.toString())
         }
     }
 

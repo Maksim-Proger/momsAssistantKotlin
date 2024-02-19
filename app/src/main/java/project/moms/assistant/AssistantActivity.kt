@@ -5,15 +5,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import project.moms.assistant.databinding.FragmentAssistantActivityBinding
 
 class AssistantActivity : Fragment() {
+
+    private lateinit var binding : FragmentAssistantActivityBinding
+    private var scrollChangeListener: OnScrollChangeListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_assistant_activity, container, false)
+        binding = FragmentAssistantActivityBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.scrollViewContent.viewTreeObserver.addOnScrollChangedListener {
+            val maxScroll = binding.scrollViewContent.getChildAt(0).height - binding.scrollViewContent.height
+            val currentScroll = binding.scrollViewContent.scrollY
+            val percentageScrolled = currentScroll.toFloat() / maxScroll.toFloat()
+
+            // Вызов интерфейса для передачи значения прокрутки в активность
+            scrollChangeListener?.onScrollChanged(percentageScrolled)
+        }
+    }
+
+    fun setOnScrollChangeListener(listener: OnScrollChangeListener) {
+        this.scrollChangeListener = listener
+    }
 }

@@ -11,18 +11,29 @@ import project.moms.assistant.databinding.ActivityMainScreenBinding
 class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
     private lateinit var binding : ActivityMainScreenBinding
     private lateinit var fragmentMainScreen: FragmentMainScreen
+    private lateinit var fragmentAssistantActivity: AssistantActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        // region Fragments
         fragmentMainScreen = FragmentMainScreen()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fr_place, fragmentMainScreen)
             .commit()
 
+        fragmentAssistantActivity = AssistantActivity()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fr_place, fragmentAssistantActivity)
+            .commit()
+
         fragmentMainScreen.setOnScrollChangeListener(this)
-    }
+        fragmentAssistantActivity.setOnScrollChangeListener(this)
+        // endregion
+
+}
 
     override fun onScrollChanged(percentageScrolled: Float) {
         animateBottomPanel(percentageScrolled)
@@ -36,8 +47,6 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         val initialPanelWidth = resources.getDimensionPixelSize(R.dimen.initial_panel_width)
         val newPanelWidth = initialPanelWidth + (percentageScrolled *
                 (resources.getDimensionPixelSize(R.dimen.max_panel_width) - initialPanelWidth)).toInt()
-
-        Log.d("Прокрутка", percentageScrolled.toString())
 
         val layoutParams = binding.linearLayoutButtons.layoutParams
         layoutParams.width = newPanelWidth
@@ -76,6 +85,11 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         val ft = fm.beginTransaction()
         ft.replace(R.id.fr_place, fragment)
         ft.commit()
-    }
 
+        if (fragment is FragmentMainScreen) {
+            fragment.setOnScrollChangeListener(this)
+        } else if (fragment is AssistantActivity) {
+            fragment.setOnScrollChangeListener(this)
+        }
+    }
 }
