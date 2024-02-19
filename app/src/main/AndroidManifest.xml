@@ -22,14 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AssistantActivity"/>
-        <activity android:name=".ChildrenProfileActivity"/>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".MomsProfileActivity"/>
-        <activity android:name=".RegistrationActivity"/>
-        <activity android:name=".SleepActivity"/>
-        <activity android:name=".SleepStatistics"/>
-
     </application>
 
 </manifest>

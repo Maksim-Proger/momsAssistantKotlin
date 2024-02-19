@@ -2,60 +2,80 @@ package project.moms.assistant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import project.moms.assistant.databinding.ActivityMainScreenBinding
 
-class MainScreenActivity : AppCompatActivity() {
+class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
     private lateinit var binding : ActivityMainScreenBinding
+    private lateinit var fragmentMainScreen: FragmentMainScreen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        animateBottomPanel()
+        fragmentMainScreen = FragmentMainScreen()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fr_place, fragmentMainScreen)
+            .commit()
+
+        fragmentMainScreen.setOnScrollChangeListener(this)
     }
 
+    override fun onScrollChanged(percentageScrolled: Float) {
+        animateBottomPanel(percentageScrolled)
+    }
 
     /**
      * Метод отвечает за анимацию нижнего контейнера с кнопками
      */
-    private fun animateBottomPanel() {
+    private fun animateBottomPanel(percentageScrolled: Float) {
 
-        binding.scrollViewContent.viewTreeObserver.addOnScrollChangedListener {
-            val maxScroll = binding.scrollViewContent.getChildAt(0).height - binding.scrollViewContent.height
-            val currentScroll = binding.scrollViewContent.scrollY
+        val initialPanelWidth = resources.getDimensionPixelSize(R.dimen.initial_panel_width)
+        val newPanelWidth = initialPanelWidth + (percentageScrolled *
+                (resources.getDimensionPixelSize(R.dimen.max_panel_width) - initialPanelWidth)).toInt()
 
-            val percentageScrolled = currentScroll.toFloat() / maxScroll.toFloat()
-            val initialPanelWidth = resources.getDimensionPixelSize(R.dimen.initial_panel_width)
-            val newPanelWidth = initialPanelWidth + (percentageScrolled *
-                    (resources.getDimensionPixelSize(R.dimen.max_panel_width) - initialPanelWidth)).toInt()
+        Log.d("Прокрутка", percentageScrolled.toString())
 
-            val layoutParams = binding.linearLayoutButtons.layoutParams
-            layoutParams.width = newPanelWidth
-            binding.linearLayoutButtons.layoutParams = layoutParams
+        val layoutParams = binding.linearLayoutButtons.layoutParams
+        layoutParams.width = newPanelWidth
+        binding.linearLayoutButtons.layoutParams = layoutParams
 
-            // Данный кусок отвечает за изменение цвета контейнера и его элементов
+        // Данный кусок отвечает за изменение цвета контейнера и его элементов
 
-            if (percentageScrolled >= 1.0) {
-                val color = ContextCompat.getColor(this, R.color.background_app_color)
-                binding.linearLayoutButtons.setBackgroundColor(color)
+        if (percentageScrolled >= 1.0) {
+            val color = ContextCompat.getColor(this, R.color.background_app_color)
+            binding.linearLayoutButtons.setBackgroundColor(color)
 
-                val childInLinearLayout = binding.linearLayoutButtons.childCount
-                for (i in 0 until childInLinearLayout) {
-                    val childView = binding.linearLayoutButtons.getChildAt(i)
-                    childView.setBackgroundColor(color)
-                }
-            } else {
-                binding.linearLayoutButtons.setBackgroundResource(R.drawable.rounded_corners)
-                val childInLinearLayout = binding.linearLayoutButtons.childCount
-                for (i in 0 until childInLinearLayout) {
-                    val childView = binding.linearLayoutButtons.getChildAt(i)
-                    childView.setBackgroundResource(R.drawable.rounded_corners)
-                }
+            val childInLinearLayout = binding.linearLayoutButtons.childCount
+            for (i in 0 until childInLinearLayout) {
+                val childView = binding.linearLayoutButtons.getChildAt(i)
+                childView.setBackgroundColor(color)
+            }
+        } else {
+            binding.linearLayoutButtons.setBackgroundResource(R.drawable.rounded_corners)
+            val childInLinearLayout = binding.linearLayoutButtons.childCount
+            for (i in 0 until childInLinearLayout) {
+                val childView = binding.linearLayoutButtons.getChildAt(i)
+                childView.setBackgroundResource(R.drawable.rounded_corners)
             }
         }
     }
 
+    fun changeFragment(view: View) {
+        val fragment: Fragment = when (view.id) {
+            R.id.home_button -> FragmentMainScreen()
+            R.id.sleep_button -> SleepActivity()
+            R.id.assistant_button -> AssistantActivity()
+            else -> return
+        }
 
+        val fm = supportFragmentManager
+        val ft = fm.beginTransaction()
+        ft.replace(R.id.fr_place, fragment)
+        ft.commit()
+    }
 
 }

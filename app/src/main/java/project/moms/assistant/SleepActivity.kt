@@ -1,14 +1,18 @@
 package project.moms.assistant
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import project.moms.assistant.databinding.ActivitySleepBinding
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 
-class SleepActivity : AppCompatActivity() {
-    private lateinit var binding : ActivitySleepBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivitySleepBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+class SleepActivity : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_sleep_activity, container, false)
     }
+
 }
