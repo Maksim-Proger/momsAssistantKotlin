@@ -5,9 +5,20 @@
         <item name="colorPrimaryVariant">@color/content_app_color</item>
         <item name="colorOnPrimary">@color/background_app_color</item>
 
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="fontFamily">@font/roboto_medium_italic</item>
+
         <item name="android:statusBarColor">?attr/colorPrimary</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.MomsAssistant" parent="Base.Theme.MomsAssistant" />
+
+<!--    <style name="FontStyle" >-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--        <item name="android:textColor">#333333</item>-->
+<!--        -->
+<!--    </style>-->
+
 </resources>

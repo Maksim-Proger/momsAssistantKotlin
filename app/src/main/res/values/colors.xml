@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background_app_color">#fef9eb</color>
-    <color name="content_app_color">#f8f4e4</color>
+    <color name="content_app_color">#f5f0c0</color>
     <color name="dark_app_color">#e4e97b</color>
 </resources>

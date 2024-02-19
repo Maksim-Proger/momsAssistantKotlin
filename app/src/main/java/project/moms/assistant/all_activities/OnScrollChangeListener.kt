@@ -1,4 +1,4 @@
-package project.moms.assistant
+package project.moms.assistant.all_activities
 
 import android.view.ViewTreeObserver
 

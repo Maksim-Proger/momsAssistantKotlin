@@ -1,11 +1,11 @@
-package project.moms.assistant
+package project.moms.assistant.all_activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import project.moms.assistant.R
 import project.moms.assistant.databinding.ActivityMainScreenBinding
 
 class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
@@ -24,17 +24,15 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             .replace(R.id.fr_place, fragmentMainScreen)
             .commit()
 
-        fragmentAssistantActivity = AssistantActivity()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fr_place, fragmentAssistantActivity)
-            .commit()
-
         fragmentMainScreen.setOnScrollChangeListener(this)
-        fragmentAssistantActivity.setOnScrollChangeListener(this)
         // endregion
 
 }
 
+    /**
+     * Перегруженный метод из интерфейса, который выполняет функцию слушателя
+     * ScrollView из фрагментов
+     */
     override fun onScrollChanged(percentageScrolled: Float) {
         animateBottomPanel(percentageScrolled)
     }
@@ -73,6 +71,9 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         }
     }
 
+    /**
+     * Метод отвечающий за смену фрагментов
+     */
     fun changeFragment(view: View) {
         val fragment: Fragment = when (view.id) {
             R.id.home_button -> FragmentMainScreen()
@@ -87,8 +88,6 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         ft.commit()
 
         if (fragment is FragmentMainScreen) {
-            fragment.setOnScrollChangeListener(this)
-        } else if (fragment is AssistantActivity) {
             fragment.setOnScrollChangeListener(this)
         }
     }

@@ -4,85 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AssistantActivity"
-    android:background="@color/background_app_color">
+    tools:context=".all_activities.FragmentMainScreen"
+    android:background="@color/background_app_color" >
 
-    <ScrollView
-        android:id="@+id/scrollViewContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:text="fragment_assistant_activity"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-        </LinearLayout>
-
-    </ScrollView>
 
 </FrameLayout>
