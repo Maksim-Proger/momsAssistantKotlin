@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainScreenActivity"
+    tools:context=".all_activities.MainScreenActivity"
     android:background="@color/background_app_color">
 
     <LinearLayout
@@ -34,9 +34,12 @@
 
     <fragment
         android:id="@+id/fr_place"
-        android:name="project.moms.assistant.FragmentMainScreen"
+        android:name="project.moms.assistant.all_activities.FragmentMainScreen"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutHeader"
