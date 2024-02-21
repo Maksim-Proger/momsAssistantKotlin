@@ -15,25 +15,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:layout_marginVertical="5dp">
+            android:layout_marginVertical="5dp"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/settings_button"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:src="@drawable/settings_icon"/>
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="7dp"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_corners">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/statistics_button"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="?attr/colorPrimary"
+                    android:src="@drawable/statistics_icon"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/settings_button"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="?attr/colorPrimary"
+                    android:src="@drawable/settings_icon"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_fell_asleep"
-                app:layout_constraintTop_toBottonOf="@+id/settings_button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:orientation="horizontal" >
@@ -42,48 +59,58 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="5dp"
                     android:text="@string/fell_asleep"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:textSize="30sp"
+                    android:layout_weight="1.7"
+                    android:textSize="35sp"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"
                     android:text="20:40"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_woke_up"
-                app:layout_constraintTop_toBottomOf="@+id/ll_fell_asleep"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="5dp"
                     android:text="@string/woke_up"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:textSize="30sp"
+                    android:layout_weight="1.7"
+                    android:textSize="35sp"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"
                     android:text="20:40"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_slept"
-                app:layout_constraintTop_toBottomOf="@+id/ll_woke_up"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:orientation="horizontal">
@@ -92,21 +119,55 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="5dp"
                     android:text="@string/slept"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:textSize="30sp"
+                    android:layout_weight="1.7"
+                    android:textSize="35sp"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"
                     android:text="20:40"/>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/ll_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:text="Начать сон"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"
+                    android:gravity="center"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Завершить сон"
+                    android:background="@drawable/style_for_content_tiles"
+                    style="@style/SpecialTextColor"
+                    android:gravity="center"/>
+
+            </LinearLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </ScrollView>
 
