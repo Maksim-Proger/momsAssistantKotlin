@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".all_activities.FragmentMainScreen"
-    android:background="@color/background_app_color" >
+    tools:context=".all_activities.FragmentMainScreen">
 
     <ScrollView
         android:id="@+id/scrollViewContent"
@@ -36,77 +35,32 @@
 
             </FrameLayout>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dateView"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:background="@color/content_app_color"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="Тут будет текущая дата и календарь"
                 android:textAlignment="center"
                 android:gravity="center"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@color/content_app_color"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="Тут будет время бодрствования"
                 android:textAlignment="center"
                 android:gravity="center"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:background="@color/content_app_color"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="Тут будет кол-во снов"
                 android:textAlignment="center"
                 android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/content_app_color"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
 
         </LinearLayout>
 

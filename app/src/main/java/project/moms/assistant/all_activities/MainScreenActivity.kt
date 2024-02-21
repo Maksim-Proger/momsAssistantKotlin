@@ -41,34 +41,34 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
      * Метод отвечает за анимацию нижнего контейнера с кнопками
      */
     private fun animateBottomPanel(percentageScrolled: Float) {
-
-        val initialPanelWidth = resources.getDimensionPixelSize(R.dimen.initial_panel_width)
-        val newPanelWidth = initialPanelWidth + (percentageScrolled *
-                (resources.getDimensionPixelSize(R.dimen.max_panel_width) - initialPanelWidth)).toInt()
-
-        val layoutParams = binding.linearLayoutButtons.layoutParams
-        layoutParams.width = newPanelWidth
-        binding.linearLayoutButtons.layoutParams = layoutParams
-
-        // Данный кусок отвечает за изменение цвета контейнера и его элементов
-
-        if (percentageScrolled >= 1.0) {
-            val color = ContextCompat.getColor(this, R.color.background_app_color)
-            binding.linearLayoutButtons.setBackgroundColor(color)
-
-            val childInLinearLayout = binding.linearLayoutButtons.childCount
-            for (i in 0 until childInLinearLayout) {
-                val childView = binding.linearLayoutButtons.getChildAt(i)
-                childView.setBackgroundColor(color)
-            }
-        } else {
-            binding.linearLayoutButtons.setBackgroundResource(R.drawable.rounded_corners)
-            val childInLinearLayout = binding.linearLayoutButtons.childCount
-            for (i in 0 until childInLinearLayout) {
-                val childView = binding.linearLayoutButtons.getChildAt(i)
-                childView.setBackgroundResource(R.drawable.rounded_corners)
-            }
-        }
+//
+//        val initialPanelWidth = resources.getDimensionPixelSize(R.dimen.initial_panel_width)
+//        val newPanelWidth = initialPanelWidth + (percentageScrolled *
+//                (resources.getDimensionPixelSize(R.dimen.max_panel_width) - initialPanelWidth)).toInt()
+//
+//        val layoutParams = binding.linearLayoutButtons.layoutParams
+//        layoutParams.width = newPanelWidth
+//        binding.linearLayoutButtons.layoutParams = layoutParams
+//
+//        // Данный кусок отвечает за изменение цвета контейнера и его элементов
+//
+//        if (percentageScrolled >= 1.0) {
+//            val color = ContextCompat.getColor(this, R.color.background_app_color)
+//            binding.linearLayoutButtons.setBackgroundColor(color)
+//
+//            val childInLinearLayout = binding.linearLayoutButtons.childCount
+//            for (i in 0 until childInLinearLayout) {
+//                val childView = binding.linearLayoutButtons.getChildAt(i)
+//                childView.setBackgroundColor(color)
+//            }
+//        } else {
+//            binding.linearLayoutButtons.setBackgroundResource(R.drawable.rounded_corners)
+//            val childInLinearLayout = binding.linearLayoutButtons.childCount
+//            for (i in 0 until childInLinearLayout) {
+//                val childView = binding.linearLayoutButtons.getChildAt(i)
+//                childView.setBackgroundResource(R.drawable.rounded_corners)
+//            }
+//        }
     }
 
     /**

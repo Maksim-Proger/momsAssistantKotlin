@@ -6,17 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import project.moms.assistant.databinding.FragmentMainScreenBinding
+import project.moms.assistant.model.DateTimeClass
 
 class FragmentMainScreen : Fragment() {
 
     private lateinit var binding : FragmentMainScreenBinding
     private var scrollChangeListener: OnScrollChangeListener? = null
+    private val dateTimeClass = DateTimeClass()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainScreenBinding.inflate(inflater, container, false)
+
+        showDate()
+
         return binding.root
     }
 
@@ -35,5 +40,12 @@ class FragmentMainScreen : Fragment() {
 
     fun setOnScrollChangeListener(listener: OnScrollChangeListener) {
         this.scrollChangeListener = listener
+    }
+
+    /**
+     * Метод помещаем дату на главный экран
+     */
+    private fun showDate() {
+        binding.dateView.text = dateTimeClass.currentDate()
     }
 }
