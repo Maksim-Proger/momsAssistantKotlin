@@ -14,19 +14,24 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/colorPrimary">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Кнопка" />
+            android:gravity="center"
+            android:text="Кнопка"
+            android:background="?attr/colorPrimary"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:text="Приветствие" />
+            android:gravity="center"
+            android:text="Приветствие"
+            android:background="?attr/colorPrimary"/>
 
     </LinearLayout>
 
