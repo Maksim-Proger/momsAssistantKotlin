@@ -1,28 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Base.Theme.MomsAssistant" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/dark_app_color</item>
-        <item name="colorPrimaryVariant">@color/content_app_color</item>
-        <item name="colorOnPrimary">@color/background_app_color</item>
 
-<!--        <color name="on_primary">#396B20</color>-->
-<!--        <color name="on_secondary">#55634B</color>-->
-<!--        <color name="on_tertiary">#386667</color>-->
-<!--        <color name="on_primary_container">#B7F297</color>-->
-<!--        <color name="on_secondary_container">#D9E7CB</color>-->
-<!--        <color name="on_tertiary_container">#BAEAEA</color>-->
-
-<!--        <item name="colorPrimary">@color/on_primary</item>-->
-<!--        <item name="colorSecondary">@color/on_secondary</item>-->
-<!--        <item name="colorTertiary">@color/on_tertiary</item>-->
-<!--        <item name="colorPrimaryContainer">@color/on_primary_container</item>-->
-<!--        <item name="colorSecondaryContainer">@color/on_secondary_container</item>-->
-<!--        <item name="colorTertiaryContainer">@color/on_tertiary_container</item>-->
-
-
-
-
-
+        <item name="colorPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/on_secondary</item>
+        <item name="colorTertiary">@color/on_tertiary</item>
+        <item name="colorPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondaryContainer">@color/on_secondary_container</item>
+        <item name="colorTertiaryContainer">@color/on_tertiary_container</item>
+        <item name="android:background">@color/background_color</item>
 
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">#333333</item>
@@ -33,11 +19,5 @@
     </style>
 
     <style name="Theme.MomsAssistant" parent="Base.Theme.MomsAssistant" />
-
-<!--    <style name="FontStyle" >-->
-<!--        <item name="android:textSize">20sp</item>-->
-<!--        <item name="android:textColor">#333333</item>-->
-<!--        -->
-<!--    </style>-->
 
 </resources>

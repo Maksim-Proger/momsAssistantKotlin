@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".all_activities.MainScreenActivity"
-    android:background="@color/background_app_color">
+    tools:context=".all_activities.MainScreenActivity">
 
     <LinearLayout
         android:id="@+id/linearLayoutHeader"
@@ -15,16 +14,15 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/dark_app_color">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Кнопка" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="5"
@@ -32,7 +30,7 @@
 
     </LinearLayout>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fr_place"
         android:name="project.moms.assistant.all_activities.FragmentMainScreen"
         android:layout_width="match_parent"
@@ -63,8 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/home_icon"
-            android:background="@color/dark_app_color"/>
+
+            android:background="?attr/colorPrimary"
+            android:src="@drawable/home_icon"/>
 
         <ImageButton
             android:id="@+id/sleep_button"
@@ -72,16 +71,18 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/sleep_icon"
-            android:background="@color/dark_app_color"/>
+
+            android:background="?attr/colorPrimary"
+            android:src="@drawable/sleep_icon"/>
 
         <ImageButton
             android:id="@+id/diary_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/diary_icon"
-            android:background="@color/dark_app_color"/>
+
+            android:background="?attr/colorPrimary"
+            android:src="@drawable/diary_icon"/>
 
         <ImageButton
             android:id="@+id/assistant_button"
@@ -89,11 +90,10 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/assistant_icon"
-            android:background="@color/dark_app_color"/>
+
+            android:background="?attr/colorPrimary"
+            android:src="@drawable/assistant_icon"/>
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

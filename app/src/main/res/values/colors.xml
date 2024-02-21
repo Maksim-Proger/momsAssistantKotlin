@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_app_color">#ABABA5</color>
-    <color name="content_app_color">#f5f0c0</color>
-    <color name="dark_app_color">#e4e97b</color>
 
-<!--    <color name="on_primary">#396B20</color>-->
-<!--    <color name="on_secondary">#55634B</color>-->
-<!--    <color name="on_tertiary">#386667</color>-->
-<!--    <color name="on_primary_container">#B7F297</color>-->
-<!--    <color name="on_secondary_container">#D9E7CB</color>-->
-<!--    <color name="on_tertiary_container">#BAEAEA</color>-->
-
+    <color name="on_primary">#8BC34A</color>
+    <color name="on_secondary">#8BC34A</color>
+    <color name="on_tertiary">#C8E6C9</color>
+    <color name="on_primary_container">#B7F297</color>
+    <color name="on_secondary_container">#D9E7CB</color>
+    <color name="on_tertiary_container">#B9F6CA</color>
+    <color name="background_color">#E5E3BE</color>
 
 </resources>
