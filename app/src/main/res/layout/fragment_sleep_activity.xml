@@ -23,28 +23,27 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:padding="7dp"
-                android:orientation="horizontal"
-                android:background="@drawable/rounded_corners">
+                android:orientation="horizontal" >
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/statistics_button"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:background="?attr/colorPrimary"
-                    android:src="@drawable/statistics_icon"/>
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/statistics_icon"
+                    android:background="@drawable/style_for_content_tiles" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/settings_button"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:background="?attr/colorPrimary"
-                    android:src="@drawable/settings_icon"/>
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/settings_icon"
+                    android:background="@drawable/style_for_content_tiles" />
 
             </LinearLayout>
 
@@ -68,13 +67,13 @@
                     style="@style/SpecialTextColor"/>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fell_asleep_material_button"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.7"
                     android:textSize="35sp"
                     android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"
-                    android:text="20:40"/>
+                    style="@style/SpecialTextColor"/>
 
             </LinearLayout>
 
@@ -99,13 +98,13 @@
                     style="@style/SpecialTextColor"/>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/woke_up_material_button"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.7"
                     android:textSize="35sp"
                     android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"
-                    android:text="20:40"/>
+                    style="@style/SpecialTextColor"/>
 
             </LinearLayout>
 
@@ -133,8 +132,7 @@
                     android:layout_weight="1.7"
                     android:textSize="35sp"
                     android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"
-                    android:text="20:40"/>
+                    style="@style/SpecialTextColor"/>
 
             </LinearLayout>
 
@@ -143,12 +141,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
+                    android:id="@+id/fell_asleep_button"
+                    android:layout_width="170dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="10dp"
                     android:text="Начать сон"
                     android:background="@drawable/style_for_content_tiles"
@@ -156,15 +154,40 @@
                     android:gravity="center"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
+                    android:id="@+id/woke_up_button"
+                    android:layout_width="170dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
                     android:text="Завершить сон"
                     android:background="@drawable/style_for_content_tiles"
                     style="@style/SpecialTextColor"
                     android:gravity="center"/>
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:textAlignment="center"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:textAlignment="center"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:textAlignment="center"
+                android:gravity="center"/>
 
 
         </LinearLayout>

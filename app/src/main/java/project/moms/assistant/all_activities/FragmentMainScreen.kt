@@ -29,7 +29,8 @@ class FragmentMainScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.scrollViewContent.viewTreeObserver.addOnScrollChangedListener {
-            val maxScroll = binding.scrollViewContent.getChildAt(0).height - binding.scrollViewContent.height
+            val maxScroll = binding.scrollViewContent.getChildAt(0).height -
+                    binding.scrollViewContent.height
             val currentScroll = binding.scrollViewContent.scrollY
             val percentageScrolled = currentScroll.toFloat() / maxScroll.toFloat()
 
