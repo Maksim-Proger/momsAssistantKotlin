@@ -6,16 +6,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import project.moms.assistant.databinding.FragmentSleepActivityBinding
+import project.moms.assistant.model.DateTimeClass
 
 class SleepActivity : Fragment() {
     private lateinit var binding : FragmentSleepActivityBinding
+    private var scrollChangeListener: OnScrollChangeListener? = null
+    private val dateTimeClass = DateTimeClass()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSleepActivityBinding.inflate(inflater, container, false)
+
+        listenerButtons()
+
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.scrollViewContent.viewTreeObserver.addOnScrollChangedListener {
+            val maxScroll = binding.scrollViewContent.getChildAt(0).height -
+                    binding.scrollViewContent.height
+            val currentScroll = binding.scrollViewContent.scrollY
+            val percentageScrolled = currentScroll.toFloat() / maxScroll.toFloat()
+
+            // Вызов интерфейса для передачи значения прокрутки в активность
+            scrollChangeListener?.onScrollChanged(percentageScrolled)
+        }
+    }
+
+    fun setOnScrollChangeListener(listener: OnScrollChangeListener) {
+        this.scrollChangeListener = listener
+    }
+
+    private fun listenerButtons() {
+        binding.fellAsleepButton.setOnClickListener {
+            binding.fellAsleepMaterialButton.text = dateTimeClass.currentTime()
+        }
+
+        binding.wokeUpButton.setOnClickListener {
+            binding.wokeUpMaterialButton.text = dateTimeClass.currentTime()
+        }
     }
 
 }

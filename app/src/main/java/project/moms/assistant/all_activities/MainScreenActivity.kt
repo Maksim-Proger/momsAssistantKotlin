@@ -12,6 +12,7 @@ import project.moms.assistant.databinding.ActivityMainScreenBinding
 class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
     private lateinit var binding : ActivityMainScreenBinding
     private lateinit var fragmentMainScreen: FragmentMainScreen
+    private lateinit var fragmentSleepActivity: SleepActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
@@ -24,7 +25,12 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             .replace(R.id.fr_place, fragmentMainScreen)
             .commit()
 
+        fragmentSleepActivity = SleepActivity()
+        supportFragmentManager.beginTransaction()
+            .commit()
+
         fragmentMainScreen.setOnScrollChangeListener(this)
+        fragmentSleepActivity.setOnScrollChangeListener(this)
         // endregion
 
         listenerButtons()
@@ -64,7 +70,7 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
 
         // Данный кусок отвечает за изменение цвета контейнера и его элементов
         if (percentageScrolled >= 1.0) {
-            val color = ContextCompat.getColor(this, R.color.on_primary)
+            val color = ContextCompat.getColor(this, R.color.background_color)
             binding.linearLayoutButtons.setBackgroundColor(color)
 
             val childInLinearLayout = binding.linearLayoutButtons.childCount
@@ -98,6 +104,8 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         ft.commit()
 
         if (fragment is FragmentMainScreen) {
+            fragment.setOnScrollChangeListener(this)
+        } else if (fragment is SleepActivity) {
             fragment.setOnScrollChangeListener(this)
         }
     }
