@@ -15,182 +15,195 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginVertical="5dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:orientation="horizontal" >
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/statistics_button"
-                    android:layout_width="50dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:orientation="vertical"
+                android:background="@drawable/new_style_for_content_tiles">
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/statistics_icon"
-                    android:background="@drawable/style_for_content_tiles" />
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/new_style_for_content_tiles"/>
+            </RelativeLayout>
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/settings_button"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/settings_icon"
-                    android:background="@drawable/style_for_content_tiles" />
+        </FrameLayout>
 
-            </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
 
-            <LinearLayout
-                android:id="@+id/ll_fell_asleep"
-                android:layout_marginTop="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal" >
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_fell_asleep"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:padding="7dp"-->
+<!--                android:orientation="horizontal" -->
+<!--                android:background="@drawable/new_style_for_content_tiles">-->
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="5dp"
-                    android:text="@string/fell_asleep"
-                    android:gravity="center_vertical"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"/>
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="@string/fell_asleep"-->
+<!--                    android:gravity="center"-->
+<!--                    android:background="@drawable/new_style_for_content_tiles"/>-->
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fell_asleep_material_button"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.7"
-                    android:textSize="35sp"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"/>
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/fell_asleep_material_button"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1.7"-->
+<!--                    android:textSize="35sp"-->
+<!--                    android:background="@drawable/new_style_for_content_tiles"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/ll_woke_up"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_woke_up"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:orientation="horizontal">-->
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="5dp"
-                    android:text="@string/woke_up"
-                    android:gravity="center_vertical"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"/>
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:paddingEnd="5dp"-->
+<!--                    android:text="@string/woke_up"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:background="@drawable/style_for_content_tiles"-->
+<!--                    style="@style/SpecialTextColor"/>-->
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/woke_up_material_button"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.7"
-                    android:textSize="35sp"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"/>
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/woke_up_material_button"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1.7"-->
+<!--                    android:textSize="35sp"-->
+<!--                    android:background="@drawable/style_for_content_tiles"-->
+<!--                    style="@style/SpecialTextColor"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/ll_slept"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_slept"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:orientation="horizontal">-->
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="5dp"
-                    android:text="@string/slept"
-                    android:gravity="center_vertical"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"/>
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:paddingStart="10dp"-->
+<!--                    android:paddingEnd="5dp"-->
+<!--                    android:text="@string/slept"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:background="@drawable/style_for_content_tiles"-->
+<!--                    style="@style/SpecialTextColor"/>-->
 
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.7"
-                    android:textSize="35sp"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"/>
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1.7"-->
+<!--                    android:textSize="35sp"-->
+<!--                    android:background="@drawable/style_for_content_tiles"-->
+<!--                    style="@style/SpecialTextColor"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/ll_buttons"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_buttons"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="35dp"-->
+<!--                android:orientation="vertical">-->
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fell_asleep_button"
-                    android:layout_width="170dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="Начать сон"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"
-                    android:gravity="center"/>
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/fell_asleep_button"-->
+<!--                    android:layout_width="170dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:text="Начать сон"-->
+<!--                    android:background="@drawable/style_for_content_tiles"-->
+<!--                    style="@style/SpecialTextColor"-->
+<!--                    android:gravity="center"/>-->
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/woke_up_button"
-                    android:layout_width="170dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="5dp"
-                    android:text="Завершить сон"
-                    android:background="@drawable/style_for_content_tiles"
-                    style="@style/SpecialTextColor"
-                    android:gravity="center"/>
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/woke_up_button"-->
+<!--                    android:layout_width="170dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="Завершить сон"-->
+<!--                    android:background="@drawable/style_for_content_tiles"-->
+<!--                    style="@style/SpecialTextColor"-->
+<!--                    android:gravity="center"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:textAlignment="center"
-                android:gravity="center"/>
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:orientation="horizontal" >-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:textAlignment="center"
-                android:gravity="center"/>
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/statistics_button"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginStart="5dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:src="@drawable/statistics_icon"-->
+<!--                    android:background="@drawable/style_for_content_tiles" />-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:textAlignment="center"
-                android:gravity="center"/>
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/settings_button"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginEnd="5dp"-->
+<!--                    android:src="@drawable/settings_icon"-->
+<!--                    android:background="@drawable/style_for_content_tiles" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:gravity="center"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:gravity="center"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:gravity="center"/>-->
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
+
 
     </ScrollView>
 
