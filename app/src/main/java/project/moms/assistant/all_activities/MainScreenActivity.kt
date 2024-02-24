@@ -1,13 +1,18 @@
 package project.moms.assistant.all_activities
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import project.moms.assistant.R
 import project.moms.assistant.databinding.ActivityMainScreenBinding
+
 
 class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
     private lateinit var binding : ActivityMainScreenBinding
@@ -78,6 +83,24 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
                 val childView = binding.linearLayoutButtons.getChildAt(i)
                 childView.setBackgroundColor(color)
             }
+
+            // Менять цвет иконки
+            // Получаем текущую иконку из вашего ImageView
+            val homeButton = binding.homeButton.drawable
+            val sleepButton = binding.sleepButton.drawable
+            val diaryButton = binding.diaryButton.drawable
+            val assistantButton = binding.assistantButton.drawable
+            // Применяем новый цвет
+            DrawableCompat.setTint(homeButton, ContextCompat.getColor(this, R.color.text_color))
+            DrawableCompat.setTint(sleepButton, ContextCompat.getColor(this, R.color.text_color))
+            DrawableCompat.setTint(diaryButton, ContextCompat.getColor(this, R.color.text_color))
+            DrawableCompat.setTint(assistantButton, ContextCompat.getColor(this, R.color.text_color))
+            // Обновляем иконку в вашем ImageView
+            binding.homeButton.setImageDrawable(homeButton)
+            binding.sleepButton.setImageDrawable(sleepButton)
+            binding.diaryButton.setImageDrawable(diaryButton)
+            binding.assistantButton.setImageDrawable(assistantButton)
+
         } else {
             binding.linearLayoutButtons.setBackgroundResource(R.drawable.rounded_corners)
             val childInLinearLayout = binding.linearLayoutButtons.childCount
@@ -85,6 +108,23 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
                 val childView = binding.linearLayoutButtons.getChildAt(i)
                 childView.setBackgroundResource(R.drawable.rounded_corners)
             }
+
+            // Менять цвет иконки
+            // Получаем текущую иконку из вашего ImageView
+            val homeButton = binding.homeButton.drawable
+            val sleepButton = binding.sleepButton.drawable
+            val diaryButton = binding.diaryButton.drawable
+            val assistantButton = binding.assistantButton.drawable
+            // Применяем новый цвет
+            DrawableCompat.setTint(homeButton, ContextCompat.getColor(this, R.color.text_color2))
+            DrawableCompat.setTint(sleepButton, ContextCompat.getColor(this, R.color.text_color2))
+            DrawableCompat.setTint(diaryButton, ContextCompat.getColor(this, R.color.text_color2))
+            DrawableCompat.setTint(assistantButton, ContextCompat.getColor(this, R.color.text_color2))
+            // Обновляем иконку в вашем ImageView
+            binding.homeButton.setImageDrawable(homeButton)
+            binding.sleepButton.setImageDrawable(sleepButton)
+            binding.diaryButton.setImageDrawable(diaryButton)
+            binding.assistantButton.setImageDrawable(assistantButton)
         }
     }
 

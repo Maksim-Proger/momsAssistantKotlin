@@ -38,7 +38,8 @@
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:background="?attr/colorPrimaryContainer"/>
+                        android:background="?attr/colorTertiary"
+                        style="@style/SpecialTextColor"/>
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
@@ -47,7 +48,8 @@
                         android:textSize="35sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:backgroundTint="?attr/colorPrimaryContainer"/>
+                        android:backgroundTint="?attr/colorTertiary"
+                        style="@style/SpecialTextColor"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +67,8 @@
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:background="?attr/colorSecondary"/>
+                        android:background="?attr/colorSecondary"
+                        style="@style/SpecialTextColor"/>
                     <Button
                         android:id="@+id/woke_up_material_button"
                         android:layout_width="wrap_content"
@@ -75,7 +78,8 @@
                         android:textSize="35sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:backgroundTint="?attr/colorSecondary"/>
+                        android:backgroundTint="?attr/colorSecondary"
+                        style="@style/SpecialTextColor"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,7 +97,8 @@
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:background="?attr/colorPrimary"/>
+                        android:background="?attr/colorPrimary"
+                        style="@style/SpecialTextColor"/>
                     <Button
                         android:id="@+id/fell_asleep_material_button"
                         android:layout_width="wrap_content"
@@ -103,7 +108,8 @@
                         android:textSize="35sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:backgroundTint="?attr/colorPrimary"/>
+                        android:backgroundTint="?attr/colorPrimary"
+                        style="@style/SpecialTextColor"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </FrameLayout>
@@ -113,7 +119,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
-                android:layout_marginHorizontal="5dp"
                 android:orientation="horizontal"
                 android:baselineAligned="false">
 
@@ -131,7 +136,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:text="Начать сон"
-                        android:background="@drawable/style_for_content_tiles"
+                        android:background="@drawable/rounded_button_style_right"
                         style="@style/SpecialTextColor"
                         android:gravity="center"/>
 
@@ -142,7 +147,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:text="Завершить сон"
-                        android:background="@drawable/style_for_content_tiles"
+                        android:background="@drawable/rounded_button_style_right"
                         style="@style/SpecialTextColor"
                         android:gravity="center"/>
 
@@ -158,22 +163,22 @@
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/statistics_button"
                         android:layout_gravity="end"
-                        android:layout_width="50dp"
+                        android:layout_width="100dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/statistics_icon"
-                        android:background="@drawable/style_for_content_tiles" />
+                        android:background="@drawable/rounded_button_style_left" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/settings_button"
                         android:layout_gravity="end"
-                        android:layout_width="50dp"
+                        android:layout_width="100dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/settings_icon"
-                        android:background="@drawable/style_for_content_tiles" />
+                        android:background="@drawable/rounded_button_style_left" />
 
                 </LinearLayout>
 

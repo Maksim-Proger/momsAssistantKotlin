@@ -10,7 +10,7 @@ class DateTimeClass {
 
     fun currentDate() : String {
         val calendar: Calendar = Calendar.getInstance()
-        val dateFormat: SimpleDateFormat = SimpleDateFormat("EEEE,\ndd.MM.yyyy", Locale.getDefault())
+        val dateFormat: SimpleDateFormat = SimpleDateFormat("EEEE, dd.MM.yyyy", Locale.getDefault())
         return dateFormat.format(calendar.time).toString()
     }
 
