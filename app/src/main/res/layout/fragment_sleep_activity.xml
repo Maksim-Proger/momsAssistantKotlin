@@ -138,7 +138,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:text="Начать сон"
-                        android:background="@drawable/rounded_button_style_right"
+                        android:background="@drawable/rounded_style_right"
                         style="@style/SpecialTextColor"
                         android:gravity="center"/>
 
@@ -149,7 +149,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:text="Завершить сон"
-                        android:background="@drawable/rounded_button_style_right"
+                        android:background="@drawable/rounded_style_right"
                         style="@style/SpecialTextColor"
                         android:gravity="center"/>
 
@@ -170,7 +170,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/statistics_icon"
-                        android:background="@drawable/rounded_button_style_left" />
+                        android:background="@drawable/rounded_style_left" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/settings_button"
@@ -180,7 +180,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/settings_icon"
-                        android:background="@drawable/rounded_button_style_left" />
+                        android:background="@drawable/rounded_style_left" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/add_dream_button"
@@ -190,7 +190,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="5dp"
                         android:src="@drawable/add_button"
-                        android:background="@drawable/rounded_button_style_left" />
+                        android:background="@drawable/rounded_style_left" />
 
                 </LinearLayout>
 
