@@ -3,4 +3,6 @@
     <string name="fell_asleep">Заснул:</string>
     <string name="woke_up">Проснулся:</string>
     <string name="slept">Спал:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
