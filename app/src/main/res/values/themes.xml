@@ -23,7 +23,7 @@
     <style name="Theme.MomsAssistant" parent="Base.Theme.MomsAssistant" />
 
     <style name="SpecialTextColor" parent="">
-        <item name="android:textColor">#F5F25B</item>
+        <item name="android:textColor">#b3d775</item>
     </style>
 
 </resources>

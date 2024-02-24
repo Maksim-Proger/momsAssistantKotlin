@@ -23,7 +23,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Кнопка"
-            android:background="?attr/colorPrimary"/>
+            android:background="?attr/colorPrimary"
+            style="@style/SpecialTextColor"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
             android:layout_weight="5"
             android:gravity="center"
             android:text="Приветствие"
-            android:background="?attr/colorPrimary"/>
+            android:background="?attr/colorPrimary"
+            style="@style/SpecialTextColor"/>
 
     </LinearLayout>
 
