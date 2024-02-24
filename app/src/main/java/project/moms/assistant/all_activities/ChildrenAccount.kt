@@ -5,15 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import project.moms.assistant.databinding.FragmentChildrensAccountBinding
+import project.moms.assistant.databinding.FragmentChildrenAccountBinding
 
 class ChildrenAccount : Fragment() {
-    private lateinit var binding: FragmentChildrensAccountBinding
+    private lateinit var binding: FragmentChildrenAccountBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentChildrensAccountBinding.inflate(inflater, container, false)
+        binding = FragmentChildrenAccountBinding.inflate(inflater, container, false)
         return binding.root
     }
 
