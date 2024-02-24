@@ -85,6 +85,7 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             }
 
             // Менять цвет иконки
+
             // Получаем текущую иконку из вашего ImageView
             val homeButton = binding.homeButton.drawable
             val sleepButton = binding.sleepButton.drawable
@@ -110,6 +111,7 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             }
 
             // Менять цвет иконки
+
             // Получаем текущую иконку из вашего ImageView
             val homeButton = binding.homeButton.drawable
             val sleepButton = binding.sleepButton.drawable

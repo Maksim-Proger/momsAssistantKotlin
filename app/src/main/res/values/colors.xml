@@ -12,4 +12,5 @@
     <color name="background_content_color">#3F4E47</color>
     <color name="text_color">#333333</color>
     <color name="text_color2">#b3d775</color>
+    <color name="background_right_part">#F7EAC5</color>
 </resources>
