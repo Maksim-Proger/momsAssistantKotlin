@@ -15,12 +15,13 @@ import project.moms.assistant.databinding.ActivityMainScreenBinding
 
 
 class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
-    private lateinit var binding : ActivityMainScreenBinding
+    private var _binding : ActivityMainScreenBinding? = null
+    private val binding get() = _binding!!
     private lateinit var fragmentMainScreen: FragmentMainScreen
     private lateinit var fragmentSleepActivity: SleepActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainScreenBinding.inflate(layoutInflater)
+        _binding = ActivityMainScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -45,6 +46,9 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
      * Метод отвечает за прослушивание кнопок
      */
     private fun listenerButtons() {
+        /**
+         * Переходим на страницу ассистента
+         */
         binding.assistantButton.setOnClickListener {
             val intent: Intent = Intent(this, AssistantActivity::class.java)
             startActivity(intent)
