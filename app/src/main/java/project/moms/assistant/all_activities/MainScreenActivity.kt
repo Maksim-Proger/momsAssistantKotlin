@@ -85,22 +85,12 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             }
 
             // Менять цвет иконки
-
-            // Получаем текущую иконку из вашего ImageView
-            val homeButton = binding.homeButton.drawable
-            val sleepButton = binding.sleepButton.drawable
-            val diaryButton = binding.diaryButton.drawable
-            val assistantButton = binding.assistantButton.drawable
-            // Применяем новый цвет
-            DrawableCompat.setTint(homeButton, ContextCompat.getColor(this, R.color.text_color))
-            DrawableCompat.setTint(sleepButton, ContextCompat.getColor(this, R.color.text_color))
-            DrawableCompat.setTint(diaryButton, ContextCompat.getColor(this, R.color.text_color))
-            DrawableCompat.setTint(assistantButton, ContextCompat.getColor(this, R.color.text_color))
-            // Обновляем иконку в вашем ImageView
-            binding.homeButton.setImageDrawable(homeButton)
-            binding.sleepButton.setImageDrawable(sleepButton)
-            binding.diaryButton.setImageDrawable(diaryButton)
-            binding.assistantButton.setImageDrawable(assistantButton)
+            val buttons = listOf(binding.homeButton, binding.sleepButton, binding.diaryButton, binding.assistantButton)
+            buttons.forEach { button ->
+                val drawable = button.drawable
+                DrawableCompat.setTint(drawable, ContextCompat.getColor(this, R.color.text_color))
+                button.setImageDrawable(drawable)
+            }
 
         } else {
             binding.linearLayoutButtons.setBackgroundResource(R.drawable.rounded_corners)
@@ -111,22 +101,12 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             }
 
             // Менять цвет иконки
-
-            // Получаем текущую иконку из вашего ImageView
-            val homeButton = binding.homeButton.drawable
-            val sleepButton = binding.sleepButton.drawable
-            val diaryButton = binding.diaryButton.drawable
-            val assistantButton = binding.assistantButton.drawable
-            // Применяем новый цвет
-            DrawableCompat.setTint(homeButton, ContextCompat.getColor(this, R.color.text_color2))
-            DrawableCompat.setTint(sleepButton, ContextCompat.getColor(this, R.color.text_color2))
-            DrawableCompat.setTint(diaryButton, ContextCompat.getColor(this, R.color.text_color2))
-            DrawableCompat.setTint(assistantButton, ContextCompat.getColor(this, R.color.text_color2))
-            // Обновляем иконку в вашем ImageView
-            binding.homeButton.setImageDrawable(homeButton)
-            binding.sleepButton.setImageDrawable(sleepButton)
-            binding.diaryButton.setImageDrawable(diaryButton)
-            binding.assistantButton.setImageDrawable(assistantButton)
+            val buttons = listOf(binding.homeButton, binding.sleepButton, binding.diaryButton, binding.assistantButton)
+            buttons.forEach { button ->
+                val drawable = button.drawable
+                DrawableCompat.setTint(drawable, ContextCompat.getColor(this, R.color.text_color2))
+                button.setImageDrawable(drawable)
+            }
         }
     }
 
