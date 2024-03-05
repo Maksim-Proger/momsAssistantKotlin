@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import project.moms.assistant.R
 import project.moms.assistant.databinding.FragmentSleepActivityBinding
 import project.moms.assistant.model.DateTimeClass
 
 class SleepActivity : Fragment() {
-    private lateinit var binding : FragmentSleepActivityBinding
+    private var _binding : FragmentSleepActivityBinding? = null
+    private val binding get() = _binding!!
     private var scrollChangeListener: OnScrollChangeListener? = null
     private val dateTimeClass = DateTimeClass()
 
@@ -17,7 +20,7 @@ class SleepActivity : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSleepActivityBinding.inflate(inflater, container, false)
+        _binding = FragmentSleepActivityBinding.inflate(inflater, container, false)
 
         listenerButtons()
 
@@ -27,6 +30,16 @@ class SleepActivity : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Добавляем анимацию к кнопкам
+        val slideFromLeft = AnimationUtils.loadAnimation(requireActivity(), R.anim.slide_from_left)
+        val slideFromRight = AnimationUtils.loadAnimation(requireActivity(), R.anim.slide_from_right)
+        binding.statisticsButton.startAnimation(slideFromRight)
+        binding.settingsButton.startAnimation(slideFromRight)
+        binding.addDreamButton.startAnimation(slideFromRight)
+        binding.fellAsleepButton.startAnimation(slideFromLeft)
+        binding.wokeUpButton.startAnimation(slideFromLeft)
+
+        // TODO Надо подписать что мы тут делаем
         binding.scrollViewContent.viewTreeObserver.addOnScrollChangedListener {
             val maxScroll = binding.scrollViewContent.getChildAt(0).height -
                     binding.scrollViewContent.height

@@ -125,6 +125,7 @@
                 android:baselineAligned="false">
 
                 <LinearLayout
+                    android:id="@+id/llLeftButtons"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -140,7 +141,7 @@
                         android:text="Начать сон"
                         android:background="@drawable/rounded_style_right"
                         style="@style/SpecialTextColor"
-                        android:gravity="center"/>
+                        android:gravity="center_vertical"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/woke_up_button"
@@ -151,11 +152,12 @@
                         android:text="Завершить сон"
                         android:background="@drawable/rounded_style_right"
                         style="@style/SpecialTextColor"
-                        android:gravity="center"/>
+                        android:gravity="center_vertical"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/llRightButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

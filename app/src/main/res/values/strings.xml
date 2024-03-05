@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Moms Assistant</string>
-    <string name="fell_asleep">Заснул:</string>
-    <string name="woke_up">Проснулся:</string>
-    <string name="slept">Спал:</string>
-    <string name="children_account">Профиль малыша</string>
+    <string name="fell_asleep">Fell asleep:</string>
+    <string name="woke_up">Woke up:</string>
+    <string name="slept">Slept</string>
+    <string name="children_account">Children account</string>
 </resources>

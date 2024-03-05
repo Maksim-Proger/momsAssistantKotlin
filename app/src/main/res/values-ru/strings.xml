@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moms Assistant</string>
+    <string name="fell_asleep">Заснул:</string>
+    <string name="woke_up">Проснулся:</string>
+    <string name="slept">Спал:</string>
+    <string name="children_account">Профиль малыша</string>
+</resources>
