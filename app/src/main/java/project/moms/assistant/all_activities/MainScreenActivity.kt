@@ -19,6 +19,7 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
     private val binding get() = _binding!!
     private lateinit var fragmentMainScreen: FragmentMainScreen
     private lateinit var fragmentSleepActivity: SleepActivity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainScreenBinding.inflate(layoutInflater)
@@ -27,13 +28,16 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
 
         // region Fragments
         fragmentMainScreen = FragmentMainScreen()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fr_place, fragmentMainScreen)
-            .commit()
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fr_place, fragmentMainScreen)
+            commit()
+        }
 
         fragmentSleepActivity = SleepActivity()
-        supportFragmentManager.beginTransaction()
-            .commit()
+        supportFragmentManager.beginTransaction().apply {
+            commit()
+        }
+
 
         fragmentMainScreen.setOnScrollChangeListener(this)
         fragmentSleepActivity.setOnScrollChangeListener(this)
@@ -63,6 +67,29 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
     override fun onScrollChanged(percentageScrolled: Float) {
         animateBottomPanel(percentageScrolled)
     }
+
+    /**
+     * Метод отвечающий за смену фрагментов
+     */
+    fun changeFragment(view: View) {
+        val fragment: Fragment = when (view.id) {
+            R.id.home_button -> FragmentMainScreen()
+            R.id.sleep_button -> SleepActivity()
+            else -> return
+        }
+
+        val fm = supportFragmentManager
+        val ft = fm.beginTransaction()
+        ft.replace(R.id.fr_place, fragment)
+        ft.commit()
+
+        if (fragment is FragmentMainScreen) {
+            fragment.setOnScrollChangeListener(this)
+        } else if (fragment is SleepActivity) {
+            fragment.setOnScrollChangeListener(this)
+        }
+    }
+
 
     /**
      * Метод отвечает за анимацию нижнего контейнера с кнопками
@@ -111,28 +138,6 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
                 DrawableCompat.setTint(drawable, ContextCompat.getColor(this, R.color.text_color2))
                 button.setImageDrawable(drawable)
             }
-        }
-    }
-
-    /**
-     * Метод отвечающий за смену фрагментов
-     */
-    fun changeFragment(view: View) {
-        val fragment: Fragment = when (view.id) {
-            R.id.home_button -> FragmentMainScreen()
-            R.id.sleep_button -> SleepActivity()
-            else -> return
-        }
-
-        val fm = supportFragmentManager
-        val ft = fm.beginTransaction()
-        ft.replace(R.id.fr_place, fragment)
-        ft.commit()
-
-        if (fragment is FragmentMainScreen) {
-            fragment.setOnScrollChangeListener(this)
-        } else if (fragment is SleepActivity) {
-            fragment.setOnScrollChangeListener(this)
         }
     }
 }

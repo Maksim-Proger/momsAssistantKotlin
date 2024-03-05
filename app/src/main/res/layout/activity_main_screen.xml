@@ -39,7 +39,6 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fr_place"
-        android:name="project.moms.assistant.all_activities.FragmentMainScreen"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
