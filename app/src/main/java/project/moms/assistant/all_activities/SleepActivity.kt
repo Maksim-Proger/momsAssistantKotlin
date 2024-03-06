@@ -1,6 +1,7 @@
 package project.moms.assistant.all_activities
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,25 @@ class SleepActivity : Fragment() {
     private val binding get() = _binding!!
     private var scrollChangeListener: OnScrollChangeListener? = null
     private val dateTimeClass = DateTimeClass()
+
+    // Тестируем анимацию
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = TransitionInflater.from(requireContext())
+            .inflateTransition(R.transition.grid_transition)
+    }
+    companion object {
+        private const val ID = "ID"
+
+        fun newInstance(id: Int): SleepActivity {
+            val args = Bundle()
+            args.putInt(ID, id)
+            val fragment = SleepActivity()
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

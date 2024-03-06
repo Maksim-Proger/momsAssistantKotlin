@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
@@ -44,7 +46,21 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         // endregion
 
         listenerButtons()
-}
+    }
+
+    // Тестируем анимацию
+    fun showSecondFragment(image: ImageView, textView: TextView, id: Int) {
+        supportFragmentManager.beginTransaction().apply {
+            addToBackStack(SLEEP_ACTIVITY)
+            addSharedElement(image, getString(R.string.image_transition_name))
+            addSharedElement(textView, getString(R.string.text_transition_name))
+            replace(R.id.fr_place, SleepActivity.newInstance(id), SLEEP_ACTIVITY)
+            commit()
+        }
+    }
+    companion object {
+        private const val SLEEP_ACTIVITY = "SLEEP_ACTIVITY"
+    }
 
     /**
      * Метод отвечает за прослушивание кнопок
