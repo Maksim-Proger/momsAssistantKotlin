@@ -40,7 +40,6 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             commit()
         }
 
-
         fragmentMainScreen.setOnScrollChangeListener(this)
         fragmentSleepActivity.setOnScrollChangeListener(this)
         // endregion
@@ -48,19 +47,32 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
         listenerButtons()
     }
 
-    // Тестируем анимацию
-    fun showSecondFragment(image: ImageView, textView: TextView, id: Int) {
+    // region Тестируем анимацию
+    fun showSleepFragment(image: ImageView, textView: TextView, id: Int) {
         supportFragmentManager.beginTransaction().apply {
-            addToBackStack(SLEEP_ACTIVITY)
+            addToBackStack(SLEEP_FRAGMENT)
             addSharedElement(image, getString(R.string.image_transition_name))
             addSharedElement(textView, getString(R.string.text_transition_name))
-            replace(R.id.fr_place, SleepActivity.newInstance(id), SLEEP_ACTIVITY)
+            replace(R.id.fr_place, SleepActivity.newInstance(id), SLEEP_FRAGMENT)
             commit()
         }
     }
-    companion object {
-        private const val SLEEP_ACTIVITY = "SLEEP_ACTIVITY"
+
+    fun showMainScreenFragment(image: ImageView, textView: TextView, id: Int) {
+        supportFragmentManager.beginTransaction().apply {
+            addToBackStack(MAIN_SCREEN)
+            addSharedElement(image, getString(R.string.image_transition_name))
+            addSharedElement(textView, getString(R.string.text_transition_name))
+            replace(R.id.fr_place, FragmentMainScreen.newInstance(id), MAIN_SCREEN)
+            commit()
+        }
     }
+
+    companion object {
+        private const val SLEEP_FRAGMENT = "SLEEP_FRAGMENT"
+        private const val MAIN_SCREEN = "MAIN_SCREEN"
+    }
+    // endregion
 
     /**
      * Метод отвечает за прослушивание кнопок
@@ -74,7 +86,6 @@ class MainScreenActivity : AppCompatActivity(), OnScrollChangeListener {
             startActivity(intent)
         }
     }
-
 
     /**
      * Перегруженный метод из интерфейса, который выполняет функцию слушателя

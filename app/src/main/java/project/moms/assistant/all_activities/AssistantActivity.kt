@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import project.moms.assistant.databinding.ActivityAssistantBinding
 
 class AssistantActivity : AppCompatActivity() {
-    private lateinit var binding:  ActivityAssistantBinding
+    private var _binding:  ActivityAssistantBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAssistantBinding.inflate(layoutInflater)
+        _binding = ActivityAssistantBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
     }

@@ -17,7 +17,7 @@ class SleepActivity : Fragment() {
     private var scrollChangeListener: OnScrollChangeListener? = null
     private val dateTimeClass = DateTimeClass()
 
-    // Тестируем анимацию
+    // region Тестируем анимацию
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedElementEnterTransition = TransitionInflater.from(requireContext())
@@ -34,16 +34,14 @@ class SleepActivity : Fragment() {
             return fragment
         }
     }
-
+    // endregion
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSleepActivityBinding.inflate(inflater, container, false)
-
         listenerButtons()
-
         return binding.root
     }
 
